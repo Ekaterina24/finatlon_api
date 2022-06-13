@@ -12,6 +12,12 @@ class NewViewSet(ModelViewSet):
     permission_classes = [IsAdminUserOrReadOnly, ]
 
 
+class TapeViewSet(ModelViewSet):
+    queryset = Tape.objects.all()
+    serializer_class = TapeSerializer
+    permission_classes = [IsAdminUserOrReadOnly, ]
+
+
 @api_view(['GET'])
 def api(request):
     api_urls = {

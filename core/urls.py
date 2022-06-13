@@ -10,6 +10,7 @@ from django.conf import settings
 router = DefaultRouter()
 
 router.register(r'news', NewViewSet)
+router.register(r'tapes', TapeViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
