@@ -41,6 +41,18 @@ class OptionViewSet(ModelViewSet):
     permission_classes = [IsAdminUserOrReadOnly, ]
 
 
+class LinkViewSet(ModelViewSet):
+    queryset = Link.objects.all()
+    serializer_class = LinkSerializer
+    permission_classes = [IsAdminUserOrReadOnly, ]
+
+
+class VideoViewSet(ModelViewSet):
+    queryset = Video.objects.all()
+    serializer_class = VideoSerializer
+    permission_classes = [IsAdminUserOrReadOnly, ]
+
+
 @api_view(['GET'])
 def api(request):
     api_urls = {

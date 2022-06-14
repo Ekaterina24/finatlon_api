@@ -15,6 +15,8 @@ router.register(r'reviews', ReviewViewSet)
 router.register(r'answers', AnswerViewSet)
 router.register(r'archives', ArchiveViewSet)
 router.register(r'options', OptionViewSet)
+router.register(r'links', LinkViewSet)
+router.register(r'videos', VideoViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

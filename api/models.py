@@ -63,3 +63,20 @@ class Archive(models.Model):
         return self.title
 
 
+class Link(models.Model):
+    title = models.CharField(max_length=255)
+    link = models.CharField(max_length=255, blank=True)
+
+    def __str__(self):
+        return self.title
+
+
+class Video(models.Model):
+    title = models.CharField(max_length=255)
+
+    link = models.ManyToManyField(Link)
+
+    def __str__(self):
+        return self.title
+
+
