@@ -18,6 +18,16 @@ class TapeViewSet(ModelViewSet):
     permission_classes = [IsAdminUserOrReadOnly, ]
 
 
+class ReviewViewSet(ModelViewSet):
+    queryset = Review.objects.all()
+    serializer_class = ReviewSerializer
+
+
+class AnswerViewSet(ModelViewSet):
+    queryset = Answer.objects.all()
+    serializer_class = AnswerSerializer
+
+
 @api_view(['GET'])
 def api(request):
     api_urls = {

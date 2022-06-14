@@ -11,6 +11,8 @@ router = DefaultRouter()
 
 router.register(r'news', NewViewSet)
 router.register(r'tapes', TapeViewSet)
+router.register(r'reviews', ReviewViewSet)
+router.register(r'answers', AnswerViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

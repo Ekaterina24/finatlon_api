@@ -21,3 +21,29 @@ class Tape(models.Model):
     def __str__(self):
             return self.title
 
+
+class Review(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255)
+    title = models.CharField(max_length=255)
+    content = models.TextField()
+    date = models.DateTimeField(default=timezone.now)
+
+
+    def __str__(self):
+        return '{}, {}'.format(self.name, self.title)
+
+
+class Answer(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255)
+    content = models.TextField()
+    date = models.DateTimeField(default=timezone.now)
+
+    review = models.ForeignKey(Review, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return '{}, {}'.format(self.name, self.email)
+
+
+
