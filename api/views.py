@@ -21,6 +21,7 @@ class TapeViewSet(ModelViewSet):
 class ReviewViewSet(ModelViewSet):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
+    permission_classes = [IsAdminUserOrReadOnly, ]
 
 
 class AnswerViewSet(ModelViewSet):
