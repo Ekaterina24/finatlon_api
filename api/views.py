@@ -29,6 +29,18 @@ class AnswerViewSet(ModelViewSet):
     serializer_class = AnswerSerializer
 
 
+class ArchiveViewSet(ModelViewSet):
+    queryset = Archive.objects.all()
+    serializer_class = ArchiveSerializer
+    permission_classes = [IsAdminUserOrReadOnly, ]
+
+
+class OptionViewSet(ModelViewSet):
+    queryset = Option.objects.all()
+    serializer_class = OptionSerializer
+    permission_classes = [IsAdminUserOrReadOnly, ]
+
+
 @api_view(['GET'])
 def api(request):
     api_urls = {

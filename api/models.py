@@ -46,4 +46,20 @@ class Answer(models.Model):
         return '{}, {}'.format(self.name, self.email)
 
 
+class Option(models.Model):
+    link = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.link
+
+
+class Archive(models.Model):
+    title = models.CharField(max_length=255)
+    year = models.DateField()
+
+    options = models.ManyToManyField(Option)
+
+    def __str__(self):
+        return self.title
+
 
